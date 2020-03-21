@@ -21,10 +21,9 @@ class Conexion
         $this->_pass = $configurar['basedatos']['pass'];
         $this->_dbname = $configurar['basedatos']['dbname'];
         $this->_charset = $configurar['basedatos']['charset'];
-        
+
         try 
         {
-
             $this->_conexion = new PDO("mysql:host=$this->_host;dbname=$this->_dbname;charset=$this->_charset",$this->_user,$this->_pass);
             $this->_conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $this->_conexion;
